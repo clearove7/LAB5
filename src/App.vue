@@ -19,7 +19,7 @@ function updatePerPage(size: number) {
 <template>
   <div class="text-center font-sans text-gray-700 antialias">
     <header>
-      <div v-if="message && !route.name.startsWith('event-detail')" id="flashMessage">
+      <div id="flashMessage" class="animate-fade" v-if="message">
         <h4>{{ message }}</h4>
       </div>
       <div class="wrapper">
@@ -43,52 +43,3 @@ function updatePerPage(size: number) {
     <RouterView :key="$route.fullPath" />
   </div>
 </template>
-
-<style>
-
-nav {
-  padding: 30px;
-}
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-nav a.router-link-exact-active {
-  color: #42b983;
-}
-.pagination-controls {
-  margin: 20px;
-}
-.pagination-controls button {
-  margin: 0 10px;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  background: linear-gradient(145deg, #6ac1ff, #3d8eff);
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background 0.3s, transform 0.3s;
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-}
-.pagination-controls button:hover {
-  background: linear-gradient(145deg, #3d8eff, #6ac1ff);
-  transform: translateY(-3px);
-}
-.pagination-controls button:active {
-  background: linear-gradient(145deg, #3d8eff, #6ac1ff);
-  transform: translateY(1px);
-}
-
-@keyframes yellofade {
-  from {
-    background-color: yellow;
-  }
-  to {
-    background-color: transparent;
-  }
-}
-#flashMessage {
-  animation: yellofade 3s ease-in-out;
-}
-</style>
