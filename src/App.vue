@@ -17,7 +17,7 @@ function updatePerPage(size: number) {
 </script>
 
 <template>
-  <div id="layout">
+  <div class="text-center font-sans text-gray-700 antialias">
     <header>
       <div v-if="message && !route.name.startsWith('event-detail')" id="flashMessage">
         <h4>{{ message }}</h4>
@@ -43,13 +43,7 @@ function updatePerPage(size: number) {
 </template>
 
 <style>
-#layout {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+
 nav {
   padding: 30px;
 }
