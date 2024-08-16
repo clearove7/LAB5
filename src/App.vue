@@ -3,6 +3,7 @@ import { RouterLink, RouterView, useRouter, useRoute } from 'vue-router'
 import { useMessageStore } from './stores/message';
 import { storeToRefs } from 'pinia';
 import { ref } from 'vue'
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 const perPage = ref(2)
 const router = useRouter()
@@ -17,6 +18,7 @@ function updatePerPage(size: number) {
 </script>
 
 <template>
+  <SpeedInsights />
   <div class="text-center font-sans text-gray-700 antialias">
     <header>
       <div id="flashMessage" class="animate-fade" v-if="message">
