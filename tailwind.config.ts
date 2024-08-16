@@ -21,7 +21,7 @@ export default {
         yellowFade: {
           '0%': { backgroundColor: 'yellow' },
           '100%': { backgroundColor: 'transparent' },
-        },
+        }
       },
     },
   },
