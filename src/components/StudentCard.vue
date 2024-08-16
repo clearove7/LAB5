@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Student from '@/types/Student';
+import { type Student } from '@/types';
 
 const props = defineProps<{
   student: Student

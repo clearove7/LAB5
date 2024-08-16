@@ -9,7 +9,7 @@ const props = defineProps<{ passenger: Event | undefined }>()
 const store = useMessageStore();
 const router = useRouter();
 const updatePassenger = () => {
-  store.updateMessage(`Updating Passenger ${props.passenger?.name}...`)
+  store.updateMessage('Updating Passenger')
   setTimeout(() => {
     store.resetMessage()
     router.push({name: 'passenger-detail-view'})

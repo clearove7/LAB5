@@ -9,7 +9,7 @@ const props = defineProps<{
     id: String
 }>()
 // eslint-lisable-next-line @typescript-eslint/no-unused-vars
-const { event } = toRef(props)
+// const { event } = toRef(props)
 const router = useRouter()
 const store = useMessageStore()
 const register = () => {
