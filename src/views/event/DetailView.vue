@@ -1,46 +1,16 @@
-<!-- src/views/event/DetailView.vue -->
 <script setup lang="ts">
-import { toRefs, defineProps, onMounted } from 'vue'
+import { toRefs, defineProps } from 'vue'
 import { type Event } from '@/types'
-import { useMessageStore } from '@/stores/message'
-import { storeToRefs } from 'pinia'
- 
 const props = defineProps<{
   event: Event
-  id: String
 }>()
 const { event } = toRefs(props)
-const store = useMessageStore()
-const { message } = storeToRefs(store)
- 
-onMounted(() => {
-  if (message.value) {
-    setTimeout(() => {
-      store.resetMessage()
-    }, 3000)
-  }
-})
 </script>
- 
 <template>
-  <div v-if="message" id="flashMessage">
-    <h4>{{ message }}</h4>
+  <div class="p-4 bg-white shadow-md rounded-lg max-w-lg mx-auto">
+    <p class="text-lg font-semibold text-gray-800 mb-2">
+      {{ event.time }} on {{ event.date }} @ {{ event.location }}
+    </p>
+    <p class="text-gray-600">{{ event.description }}</p>
   </div>
-  <p>{{ event.time }} on {{ event.date }} @ {{ event.location }}</p>
-  <p>{{ event.description }}</p>
 </template>
- 
-<style scoped>
-@keyframes yellofade {
-  from {
-    background-color: yellow;
-  }
-  to {
-    background-color: transparent;
-  }
-}
-#flashMessage {
-  animation: yellofade 3s ease-in-out;
-}
-</style>
- 

@@ -10,6 +10,7 @@ const props = defineProps({
     required: true
   }
 })
+
 onMounted(() => {
   EventService.getEvent(parseInt(props.id))
     .then((response) => {

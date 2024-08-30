@@ -1,17 +1,16 @@
 import axios from 'axios'
- 
+
 const apiClient = axios.create({
-    baseURL: 'https://dv-student-backend-2019.appspot.com/students',
-    withCredentials: false,
-    headers:{
-        Accept: 'application/json',
-        'Content-Type': 'application/json'
-    }
+  baseURL: 'https://my-json-server.typicode.com/MRSMIRROR/331-mock-server',
+  withCredentials: false,
+  headers: {
+    Accept: 'application/json',
+    'Content-Type': 'application/json'
+  }
 })
- 
-export default{
-    getEvents(){
-        return apiClient.get('/')
-    }
+
+export default {
+  getStudents() {
+    return apiClient.get('/students')
+  }
 }
- 
